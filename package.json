@@ -1,5 +1,5 @@
 {
-  "name": "create-node-proj",
+  "name": "@ack_inc/create-node-proj",
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
