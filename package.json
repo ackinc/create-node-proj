@@ -10,6 +10,6 @@
     "create-node-proj": "scripts/create-node-proj.js"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=12.19.0"
   }
 }
