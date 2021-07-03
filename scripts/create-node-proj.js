@@ -72,9 +72,9 @@ function downloadFile(url, savepath) {
   });
 }
 
-process.on("uncaughtException", (e) => {
-  fs.rmdirSync(projectPath);
-  console.error(`Error creating node project.`);
-  console.error(e);
+process.on("unhandledRejection", (e) => {
+  fs.rmdirSync(projectPath, { recursive: true });
+  console.error(`\n\nFailed to create node project ${projectName}`);
+  console.error(e.stack);
   process.exit(1);
 });
