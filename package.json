@@ -1,10 +1,15 @@
 {
   "name": "create-node-proj",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.30.0",
     "prettier": "^2.3.2"
+  },
+  "bin": {
+    "create-node-proj": "scripts/create-node-proj.js"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
