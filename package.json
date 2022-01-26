@@ -1,6 +1,6 @@
 {
   "name": "@ack_inc/create-node-proj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.30.0",

@@ -40,14 +40,16 @@ async function main() {
 
   // TODO: install yarn if not installed
   execSync(`yarn init -y`);
+  execSync(`yarn add dotenv`);
   execSync(`yarn add eslint prettier --dev`);
 
   execSync(`echo node_modules > .gitignore`);
+  execSync(`echo .env >> .gitignore`);
 
   const eslintConfPath = `https://gist.githubusercontent.com/ackinc/088d2a8f431fa2b65241bda0384862db/raw/f8248774a9dba435f3a4a1ccfbb0c2d0cc06c20a/eslintrc`;
   await downloadFile(eslintConfPath, path.join(projectPath, ".eslintrc.js"));
 
-  fs.writeFileSync(path.join(projectPath, "index.js"), "");
+  execSync(`echo "require('dotenv').config();" > index.js`);
 
   execSync(`git init`);
   execSync(`git add .`);
