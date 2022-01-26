@@ -46,6 +46,13 @@ async function main() {
   execSync(`echo node_modules > .gitignore`);
   execSync(`echo .env >> .gitignore`);
 
+  execSync(`mkdir .vscode`);
+  const vscodeLaunchConfPath = `https://gist.githubusercontent.com/ackinc/af49e11baffbc581caf9c52ae7bd131d/raw/35d37352b549e04ab7ad3e940c7cc831b6260fa1/vscode-launch.json`;
+  await downloadFile(
+    vscodeLaunchConfPath,
+    path.join(projectPath, ".vscode/launch.conf")
+  );
+
   const eslintConfPath = `https://gist.githubusercontent.com/ackinc/088d2a8f431fa2b65241bda0384862db/raw/f8248774a9dba435f3a4a1ccfbb0c2d0cc06c20a/eslintrc`;
   await downloadFile(eslintConfPath, path.join(projectPath, ".eslintrc.js"));
 
